@@ -33,10 +33,10 @@ export default function GlobalNav() {
 
   const navBackgroundVariant = {
     initial: {
-      backgroundColor: "rgba(154,52,18,0)",
+      backgroundColor: "rgba(96,110,92,0)",
     },
     new: {
-      backgroundColor: "rgba(124,45,18,1)",
+      backgroundColor: "rgba(96,110,92,1)",
     },
   };
 
@@ -46,7 +46,7 @@ export default function GlobalNav() {
         <motion.nav
           animate={outputY > 140 ? "new" : "initial"}
           variants={navBackgroundVariant}
-          className=" fixed w-full p-2 z-[999] bg-orange-900  top-0 left-0 flex justify-center"
+          className=" fixed w-full p-2 z-[999] bg-[#606e5c]  top-0 left-0 flex justify-center"
         >
           <div className="max-w-screen-2xl m-auto  w-full px-3 items-center  flex justify-between">
             <div className="w-20 aspect-[208.19/198.49]">
@@ -82,7 +82,7 @@ export default function GlobalNav() {
         </motion.nav>
         <SheetContent className="  z-[9999]">
           <SheetHeader>
-            <SheetTitle className=" font-serif text-orange-800 text-3xl">
+            <SheetTitle className=" font-serif text-[#606e5c] text-3xl">
               Menu
             </SheetTitle>
           </SheetHeader>
