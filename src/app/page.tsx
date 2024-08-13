@@ -30,16 +30,15 @@ const marqueeVariants = {
 export default function Home() {
   return (
     <main className=" font-serif">
-      <section className=" relative flex items-center justify-center p-5 pt-24 bg-orange-900 w-full h-[calc(100vh-20vh)]">
+      <section className=" relative flex items-center justify-center p-5 pt-24 bg-[#606e5c]
+       w-full h-[calc(100vh-20vh)]">
         <div className=" relative w-full h-full">
           <div className=" absolute z-10 w-full h-full p-3 md:p-20 flex flex-col gap-4 justify-end text-white font-medium">
             <h1 className=" text-5xl md:text-8xl italic ">
-              Let the fabric <br /> Do the talking.
+              Pure Art <br /> Pure Living
             </h1>
             <p className=" text-md font-sans max-w-xl text-stone-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex
-              laboriosam laudantium veniam, minima sint accusantium molestias
-              sapiente vero culpa.
+              Discover the art of pure living with Shuddhi Kalaa – where every product is a testament to India’s valuable heritage and promising future
             </p>
           </div>
           <Image
@@ -51,7 +50,7 @@ export default function Home() {
         </div>
       </section>
       <section className=" py-12">
-        <div className="  max-w-full w-screen h-[66px] relative overflow-x-hidden">
+        <div className="  max-w-full w-screen h-[70px] relative overflow-x-hidden">
           <motion.div
             className=" absolute flex-nowrap mx-5 uppercase"
             variants={marqueeVariants}
