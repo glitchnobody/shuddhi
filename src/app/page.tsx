@@ -27,18 +27,43 @@ const marqueeVariants = {
   },
 };
 
+const data = [
+  {
+    name: "Product 1",
+  },
+  {
+    name: "Product 2",
+  },
+  {
+    name: "Product 3",
+  },
+  {
+    name: "Product 4",
+  },
+  {
+    name: "Product 5",
+  },
+  {
+    name: "Product 6",
+  },
+];
+
 export default function Home() {
   return (
     <main className=" font-serif">
-      <section className=" relative flex items-center justify-center p-5 pt-24 bg-[#606e5c]
-       w-full h-[calc(100vh-20vh)]">
+      <section
+        className=" relative flex items-center justify-center p-5 pt-24 bg-[#606e5c]
+       w-full h-[calc(100vh-20vh)]"
+      >
         <div className=" relative w-full h-full">
           <div className=" absolute z-10 w-full h-full p-3 md:p-20 flex flex-col gap-4 justify-end text-white font-medium">
             <h1 className=" text-5xl md:text-8xl italic ">
               Pure Art <br /> Pure Living
             </h1>
             <p className=" text-md font-sans max-w-xl text-stone-300">
-              Discover the art of pure living with Shuddhi Kalaa – where every product is a testament to India’s valuable heritage and promising future
+              Discover the art of pure living with Shuddhi Kalaa – where every
+              product is a testament to India’s valuable heritage and promising
+              future
             </p>
           </div>
           <Image
@@ -98,13 +123,13 @@ export default function Home() {
             ))}
           </div>
           <CarouselContent className=" mt-10 hidden md:flex">
-            {Array.from({ length: 15 }).map((_, index) => (
+            {data.map((item, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex aspect-square items-center justify-center p-6">
                       <span className="text-3xl font-semibold">
-                        {index + 1}
+                        {item.name}
                       </span>
                     </CardContent>
                   </Card>
