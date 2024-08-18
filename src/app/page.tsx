@@ -32,7 +32,7 @@ const data = [
     key: 0,
     name: "Women's Dress",
     price: 1599,
-    originalPrice: 999,
+    originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
   },
@@ -40,7 +40,7 @@ const data = [
     key: 1,
     name: "Women's Dress",
     price: 1599,
-    originalPrice: 999,
+    originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
   },
@@ -48,7 +48,7 @@ const data = [
     key: 2,
     name: "Women's Dress",
     price: 1599,
-    originalPrice: 999,
+    originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
   },
@@ -56,7 +56,7 @@ const data = [
     key: 3,
     name: "Women's Dress",
     price: 1599,
-    originalPrice: 999,
+    originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
   },
@@ -64,7 +64,7 @@ const data = [
     key: 4,
     name: "Women's Dress",
     price: 1599,
-    originalPrice: 999,
+    originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
   },
@@ -72,7 +72,7 @@ const data = [
     key: 5,
     name: "Women's Dress",
     price: 1599,
-    originalPrice: 999,
+    originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
   },
@@ -137,7 +137,7 @@ export default function Home() {
           className="w-full max-w-screen-2xl"
         >
           <div className=" w-full flex md:justify-between items-center max-w-screen-2xl px-3">
-            <h3 className=" text-6xl font-medium">Some Heading</h3>
+            <h3 className=" text-6xl font-medium">New Drops</h3>
             <div className="relative md:flex  hidden  gap-4  ">
               <CarouselPrevious />
               <CarouselNext />
@@ -160,15 +160,16 @@ export default function Home() {
                     <CardContent className="flex aspect-square items-center justify-center p-6">
                       <div>
                         <h3 className="text-lg font-semibold">{product.name}</h3>
-                        <p className="my-2">
-                          <span className="text-green-500 font-bold">
-                            INR {product.price}
-                          </span>
-                          <span className="line-through ml-2 text-gray-500">
+                        <p className="text-red-500">
+                          {product.discount}% off
+                        </p>
+                        <p className="my-2"> 
+                          <span className="font-bold">&#8377;</span>
+                          <span className="line-through ml-1 text-gray-500">
                             {product.originalPrice}
                           </span>
-                          <span className="text-red-500 ml-2">
-                            {product.discount}% off
+                          <span className="text-green-500 ml-1 font-bold">
+                            {product.price}
                           </span>
                         </p>
                         <p>Sizes: {product.sizes.join(", ")}</p>
