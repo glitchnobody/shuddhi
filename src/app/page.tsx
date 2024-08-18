@@ -29,22 +29,52 @@ const marqueeVariants = {
 
 const data = [
   {
-    name: "Product 1",
+    key: 0,
+    name: "Women's Dress",
+    price: 1599,
+    originalPrice: 999,
+    discount: 40,
+    sizes: ["S", "M", "L"],
   },
   {
-    name: "Product 2",
+    key: 1,
+    name: "Women's Dress",
+    price: 1599,
+    originalPrice: 999,
+    discount: 40,
+    sizes: ["S", "M", "L"],
   },
   {
-    name: "Product 3",
+    key: 2,
+    name: "Women's Dress",
+    price: 1599,
+    originalPrice: 999,
+    discount: 40,
+    sizes: ["S", "M", "L"],
   },
   {
-    name: "Product 4",
+    key: 3,
+    name: "Women's Dress",
+    price: 1599,
+    originalPrice: 999,
+    discount: 40,
+    sizes: ["S", "M", "L"],
   },
   {
-    name: "Product 5",
+    key: 4,
+    name: "Women's Dress",
+    price: 1599,
+    originalPrice: 999,
+    discount: 40,
+    sizes: ["S", "M", "L"],
   },
   {
-    name: "Product 6",
+    key: 5,
+    name: "Women's Dress",
+    price: 1599,
+    originalPrice: 999,
+    discount: 40,
+    sizes: ["S", "M", "L"],
   },
 ];
 
@@ -123,14 +153,30 @@ export default function Home() {
             ))}
           </div>
           <CarouselContent className=" mt-10 hidden md:flex">
-            {data.map((item, index) => (
+            {data.map((product, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <span className="text-3xl font-semibold">
-                        {item.name}
-                      </span>
+                      <div>
+                        <h3 className="text-lg font-semibold">{product.name}</h3>
+                        <p className="my-2">
+                          <span className="text-green-500 font-bold">
+                            INR {product.price}
+                          </span>
+                          <span className="line-through ml-2 text-gray-500">
+                            {product.originalPrice}
+                          </span>
+                          <span className="text-red-500 ml-2">
+                            {product.discount}% off
+                          </span>
+                        </p>
+                        <p>Sizes: {product.sizes.join(", ")}</p>
+                        {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={600} />
+                    </p> */}
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
