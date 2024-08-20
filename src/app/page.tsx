@@ -12,7 +12,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
+import product1 from "../images/Product/product1.svg"
+import product2 from "../images/Product/product2.svg"
+import product3 from "../images/Product/product3.svg"
+import product4 from "../images/Product/product4.svg"
 const marqueeVariants = {
   animate: {
     x: [0, -1421.235],
@@ -35,6 +38,7 @@ const data = [
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
+    image: product1,
   },
   {
     key: 1,
@@ -43,6 +47,7 @@ const data = [
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
+    image: product3,
   },
   {
     key: 2,
@@ -51,6 +56,7 @@ const data = [
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
+    image: product4,
   },
   {
     key: 3,
@@ -59,6 +65,7 @@ const data = [
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
+    image: product2,
   },
   {
     key: 4,
@@ -67,6 +74,7 @@ const data = [
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
+    image: product3,
   },
   {
     key: 5,
@@ -75,6 +83,7 @@ const data = [
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
+    image: product4,
   },
 ];
 
@@ -157,7 +166,12 @@ export default function Home() {
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card>
-                    <CardContent className="flex aspect-square items-end justify-start p-6">
+                    <CardContent className="flex aspect-square items-end justify-start p-6 relative">
+                      <div className="absolute h-[65%] w-[100%] top-0 right-0 left-0 bottom-0"><Image
+                        src={product.image}
+                        className="absolute"
+                        alt="Product"
+                        fill /></div>
                       <div>
                         <h3 className="text-lg font-semibold">{product.name}</h3>
                         <p className="text-red-500">
