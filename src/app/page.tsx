@@ -157,13 +157,127 @@ export default function Home() {
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                    <CardContent className="flex aspect-square items-end justify-start p-6">
                       <div>
                         <h3 className="text-lg font-semibold">{product.name}</h3>
                         <p className="text-red-500">
                           {product.discount}% off
                         </p>
-                        <p className="my-2"> 
+                        <p className="my-2">
+                          <span className="font-bold">&#8377;</span>
+                          <span className="line-through ml-1 text-gray-500">
+                            {product.originalPrice}
+                          </span>
+                          <span className="text-green-500 ml-1 font-bold">
+                            {product.price}
+                          </span>
+                        </p>
+                        <p>Sizes: {product.sizes.join(", ")}</p>
+                        {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={600} />
+                    </p> */}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+      <section className=" mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className=" w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className=" text-6xl font-medium">Tops</h3>
+            <div className="relative md:flex  hidden  gap-4  ">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+          <div className=" grid grid-cols-2 gap-4 mt-10 md:hidden ">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Card key={index}>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-3xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <CarouselContent className=" mt-10 hidden md:flex">
+            {data.map((product, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-square items-end justify-start p-6">
+                      <div>
+                        <h3 className="text-lg font-semibold">{product.name}</h3>
+                        <p className="text-red-500">
+                          {product.discount}% off
+                        </p>
+                        <p className="my-2">
+                          <span className="font-bold">&#8377;</span>
+                          <span className="line-through ml-1 text-gray-500">
+                            {product.originalPrice}
+                          </span>
+                          <span className="text-green-500 ml-1 font-bold">
+                            {product.price}
+                          </span>
+                        </p>
+                        <p>Sizes: {product.sizes.join(", ")}</p>
+                        {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={600} />
+                    </p> */}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+      <section className=" mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className=" w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className=" text-6xl font-medium">Dresses</h3>
+            <div className="relative md:flex  hidden  gap-4  ">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+          <div className=" grid grid-cols-2 gap-4 mt-10 md:hidden ">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Card key={index}>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-3xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <CarouselContent className=" mt-10 hidden md:flex">
+            {data.map((product, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-square items-end justify-start p-6">
+                      <div>
+                        <h3 className="text-lg font-semibold">{product.name}</h3>
+                        <p className="text-red-500">
+                          {product.discount}% off
+                        </p>
+                        <p className="my-2">
                           <span className="font-bold">&#8377;</span>
                           <span className="line-through ml-1 text-gray-500">
                             {product.originalPrice}
