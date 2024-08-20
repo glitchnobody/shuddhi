@@ -167,9 +167,8 @@ export default function Home() {
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex aspect-square items-end justify-start p-6 relative">
-                      <div className="absolute h-[65%] w-[100%] top-0 right-0 left-0 bottom-0"><Image
+                      <div className="absolute h-[280px] w-[180px] top-0 bottom-0 left-[115px]"><Image
                         src={product.image}
-                        className="absolute"
                         alt="Product"
                         fill /></div>
                       <div>
