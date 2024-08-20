@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
-import react, { useState, useEffect } from "react";
+import react, { useState, useEffect, useRef } from "react";
 import HeroImage1 from "../images/Homepage/Hero/hero.png";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
+import { EmblaPluginType } from "embla-carousel";
 import {
   Carousel,
   CarouselContent,
@@ -12,10 +14,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import product1 from "../images/Product/product1.svg"
-import product2 from "../images/Product/product2.svg"
-import product3 from "../images/Product/product3.svg"
-import product4 from "../images/Product/product4.svg"
+import product1 from "../images/Product/product1.png";
+import product2 from "../images/Product/product2.png";
+import product3 from "../images/Product/product3.png";
+import product4 from "../images/Product/product4.png";
 const marqueeVariants = {
   animate: {
     x: [0, -1421.235],
@@ -86,8 +88,13 @@ const data = [
     image: product4,
   },
 ];
+type PropType = {
+  plugins?: EmblaPluginType[];
+};
 
 export default function Home() {
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+
   return (
     <main className=" font-serif">
       <section
@@ -140,6 +147,7 @@ export default function Home() {
       </section>
       <section className=" mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
+          plugins={[plugin.current as any]}
           opts={{
             align: "start",
           }}
@@ -163,36 +171,29 @@ export default function Home() {
           </div>
           <CarouselContent className=" mt-10 hidden md:flex">
             {data.map((product, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-end justify-start p-6 relative">
-                      <div className="absolute h-[280px] w-[180px] top-0 bottom-0 left-[115px]"><Image
-                        src={product.image}
-                        alt="Product"
-                        fill /></div>
-                      <div>
-                        <h3 className="text-lg font-semibold">{product.name}</h3>
-                        <p className="text-red-500">
-                          {product.discount}% off
-                        </p>
-                        <p className="my-2">
-                          <span className="font-bold">&#8377;</span>
-                          <span className="line-through ml-1 text-gray-500">
-                            {product.originalPrice}
-                          </span>
-                          <span className="text-green-500 ml-1 font-bold">
-                            {product.price}
-                          </span>
-                        </p>
-                        <p>Sizes: {product.sizes.join(", ")}</p>
-                        {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                <div className="p-1 border-black flex flex-col  relative border rounded-md">
+                  <div className="relative  w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className=" p-4">
+                    <h3 className="text-lg font-semibold"> {product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    <p>Sizes: {product.sizes.join(", ")}</p>
+                    {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
                       <MdOutlineTimer className="text-xl lg:text-2xl" />
                       <CountdownTimer initialTime={600} />
                     </p> */}
-                      </div>
-                    </CardContent>
-                  </Card>
+                  </div>
                 </div>
               </CarouselItem>
             ))}
@@ -229,10 +230,10 @@ export default function Home() {
                   <Card>
                     <CardContent className="flex aspect-square items-end justify-start p-6">
                       <div>
-                        <h3 className="text-lg font-semibold">{product.name}</h3>
-                        <p className="text-red-500">
-                          {product.discount}% off
-                        </p>
+                        <h3 className="text-lg font-semibold">
+                          {product.name}
+                        </h3>
+                        <p className="text-red-500">{product.discount}% off</p>
                         <p className="my-2">
                           <span className="font-bold">&#8377;</span>
                           <span className="line-through ml-1 text-gray-500">
@@ -286,10 +287,10 @@ export default function Home() {
                   <Card>
                     <CardContent className="flex aspect-square items-end justify-start p-6">
                       <div>
-                        <h3 className="text-lg font-semibold">{product.name}</h3>
-                        <p className="text-red-500">
-                          {product.discount}% off
-                        </p>
+                        <h3 className="text-lg font-semibold">
+                          {product.name}
+                        </h3>
+                        <p className="text-red-500">{product.discount}% off</p>
                         <p className="my-2">
                           <span className="font-bold">&#8377;</span>
                           <span className="line-through ml-1 text-gray-500">
