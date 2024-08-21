@@ -18,6 +18,12 @@ import product1 from "../images/Product/product1.png";
 import product2 from "../images/Product/product2.png";
 import product3 from "../images/Product/product3.png";
 import product4 from "../images/Product/product4.png";
+import link from "../images/Product/Link.svg";
+import link1 from "../images/Product/Link1.svg";
+import link2 from "../images/Product/Link2.svg";
+import link3 from "../images/Product/Link3.svg";
+import link4 from "../images/Product/Link4.svg";
+import link5 from "../images/Product/Link5.svg";
 const marqueeVariants = {
   animate: {
     x: [0, -1421.235],
@@ -310,6 +316,42 @@ export default function Home() {
             ))}
           </CarouselContent>
         </Carousel>
+      </section>
+      <section className="m-9">
+        <div>
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            TRENDING NOW{" "}
+            <span role="img" aria-label="fire">
+              🔥
+            </span>
+          </h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="border">
+              <Image src={link} alt="Breezy Linen" className="w-full" />
+              <p className="text-center">BREEZY LINEN</p>
+            </div>
+            <div>
+              <Image src={link1} alt="Tops" className="w-full" />
+              <p className="text-center">TOPS</p>
+            </div>
+            <div>
+              <Image src={link2} alt="Crochet Shirts" className="w-full" />
+              <p className="text-center">CROCHET SHIRTS</p>
+            </div>
+            <div>
+              <Image src={link5} alt="All Black" className="w-full" />
+              <p className="text-center">ALL BLACK</p>
+            </div>
+            <div>
+              <Image src={link4} alt="Cargos" className="w-full" />
+              <p className="text-center">CARGOS</p>
+            </div>
+            <div>
+              <Image src={link3} alt="Full Sleeves" className="w-full" />
+              <p className="text-center">FULL SLEEVES</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
