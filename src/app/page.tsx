@@ -94,7 +94,8 @@ type PropType = {
 
 export default function Home() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-
+  const plugin1 = useRef(Autoplay({ delay: 1900, stopOnInteraction: true }));
+  const plugin2 = useRef(Autoplay({ delay: 2100, stopOnInteraction: true }));
   return (
     <main className=" font-serif">
       <section
@@ -147,7 +148,7 @@ export default function Home() {
       </section>
       <section className=" mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
-          plugins={[plugin.current as any]}
+          plugins={[plugin1.current as any]}
           opts={{
             align: "start",
           }}
@@ -169,10 +170,10 @@ export default function Home() {
               </Card>
             ))}
           </div>
-          <CarouselContent className=" mt-10 hidden md:flex">
+          <CarouselContent className="mt-10 hidden md:flex">
             {data.map((product, index) => (
               <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                <div className="p-1 border-black flex flex-col  relative border rounded-md">
+                <div className="p-1 flex flex-col  relative border rounded-md">
                   <div className="relative  w-full aspect-[33/50]">
                     <Image src={product.image} alt="Product" fill />
                   </div>
@@ -202,6 +203,7 @@ export default function Home() {
       </section>
       <section className=" mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
+          plugins={[plugin2.current as any]}
           opts={{
             align: "start",
           }}
@@ -225,32 +227,29 @@ export default function Home() {
           </div>
           <CarouselContent className=" mt-10 hidden md:flex">
             {data.map((product, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-end justify-start p-6">
-                      <div>
-                        <h3 className="text-lg font-semibold">
-                          {product.name}
-                        </h3>
-                        <p className="text-red-500">{product.discount}% off</p>
-                        <p className="my-2">
-                          <span className="font-bold">&#8377;</span>
-                          <span className="line-through ml-1 text-gray-500">
-                            {product.originalPrice}
-                          </span>
-                          <span className="text-green-500 ml-1 font-bold">
-                            {product.price}
-                          </span>
-                        </p>
-                        <p>Sizes: {product.sizes.join(", ")}</p>
-                        {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
-                      <MdOutlineTimer className="text-xl lg:text-2xl" />
-                      <CountdownTimer initialTime={600} />
-                    </p> */}
-                      </div>
-                    </CardContent>
-                  </Card>
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                <div className="p-1 flex flex-col  relative border rounded-md">
+                  <div className="relative  w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className=" p-4">
+                    <h3 className="text-lg font-semibold"> {product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    <p>Sizes: {product.sizes.join(", ")}</p>
+                    {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
+                    <MdOutlineTimer className="text-xl lg:text-2xl" />
+                    <CountdownTimer initialTime={600} />
+                  </p> */}
+                  </div>
                 </div>
               </CarouselItem>
             ))}
@@ -259,6 +258,7 @@ export default function Home() {
       </section>
       <section className=" mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
+          plugins={[plugin.current as any]}
           opts={{
             align: "start",
           }}
@@ -282,32 +282,29 @@ export default function Home() {
           </div>
           <CarouselContent className=" mt-10 hidden md:flex">
             {data.map((product, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-end justify-start p-6">
-                      <div>
-                        <h3 className="text-lg font-semibold">
-                          {product.name}
-                        </h3>
-                        <p className="text-red-500">{product.discount}% off</p>
-                        <p className="my-2">
-                          <span className="font-bold">&#8377;</span>
-                          <span className="line-through ml-1 text-gray-500">
-                            {product.originalPrice}
-                          </span>
-                          <span className="text-green-500 ml-1 font-bold">
-                            {product.price}
-                          </span>
-                        </p>
-                        <p>Sizes: {product.sizes.join(", ")}</p>
-                        {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
-                      <MdOutlineTimer className="text-xl lg:text-2xl" />
-                      <CountdownTimer initialTime={600} />
-                    </p> */}
-                      </div>
-                    </CardContent>
-                  </Card>
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                <div className="p-1 flex flex-col  relative border rounded-md">
+                  <div className="relative  w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className=" p-4">
+                    <h3 className="text-lg font-semibold"> {product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    <p>Sizes: {product.sizes.join(", ")}</p>
+                    {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
+                    <MdOutlineTimer className="text-xl lg:text-2xl" />
+                    <CountdownTimer initialTime={600} />
+                  </p> */}
+                  </div>
                 </div>
               </CarouselItem>
             ))}
