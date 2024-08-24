@@ -14,16 +14,19 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+// product image import
 import product1 from "../images/Product/product1.png";
 import product2 from "../images/Product/product2.png";
 import product3 from "../images/Product/product3.png";
 import product4 from "../images/Product/product4.png";
-import link from "../images/Product/Link.svg";
-import link1 from "../images/Product/Link1.svg";
-import link2 from "../images/Product/Link2.svg";
-import link3 from "../images/Product/Link3.svg";
-import link4 from "../images/Product/Link4.svg";
-import link5 from "../images/Product/Link5.svg";
+// Category image import
+import link from "../images/Product/1.png";
+import link1 from "../images/Product/2.png";
+import link2 from "../images/Product/3.png";
+import link3 from "../images/Product/6.png";
+import link4 from "../images/Product/5.png";
+import link5 from "../images/Product/7.png";
+
 const marqueeVariants = {
   animate: {
     x: [0, -1421.235],
@@ -152,62 +155,7 @@ export default function Home() {
         </div>
         <div className=" w-full h-px max-w-screen-xl mt-10 bg-black m-auto"></div>
       </section>
-      <section className=" mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
-        <Carousel
-          plugins={[plugin1.current as any]}
-          opts={{
-            align: "start",
-          }}
-          className="w-full max-w-screen-2xl"
-        >
-          <div className=" w-full flex md:justify-between items-center max-w-screen-2xl px-3">
-            <h3 className=" text-6xl font-medium">New Drops</h3>
-            <div className="relative md:flex  hidden  gap-4  ">
-              <CarouselPrevious />
-              <CarouselNext />
-            </div>
-          </div>
-          <div className=" grid grid-cols-2 gap-4 mt-10 md:hidden ">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <Card key={index}>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-3xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <CarouselContent className="mt-10 hidden md:flex">
-            {data.map((product, index) => (
-              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                <div className="p-1 flex flex-col  relative border rounded-md">
-                  <div className="relative  w-full aspect-[33/50]">
-                    <Image src={product.image} alt="Product" fill />
-                  </div>
-                  <div className=" p-4">
-                    <h3 className="text-lg font-semibold"> {product.name}</h3>
-                    <p className="text-red-500">{product.discount}% off</p>
-                    <p className="my-2">
-                      <span className="font-bold">&#8377;</span>
-                      <span className="line-through ml-1 text-gray-500">
-                        {product.originalPrice}
-                      </span>
-                      <span className="text-green-500 ml-1 font-bold">
-                        {product.price}
-                      </span>
-                    </p>
-                    <p>Sizes: {product.sizes.join(", ")}</p>
-                    {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
-                      <MdOutlineTimer className="text-xl lg:text-2xl" />
-                      <CountdownTimer initialTime={600} />
-                    </p> */}
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </section>
-      <section className=" mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
           plugins={[plugin2.current as any]}
           opts={{
@@ -215,31 +163,51 @@ export default function Home() {
           }}
           className="w-full max-w-screen-2xl"
         >
-          <div className=" w-full flex md:justify-between items-center max-w-screen-2xl px-3">
-            <h3 className=" text-6xl font-medium">Tops</h3>
-            <div className="relative md:flex  hidden  gap-4  ">
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">New Drops</h3>
+            <div className="relative md:flex hidden gap-4">
               <CarouselPrevious />
               <CarouselNext />
             </div>
           </div>
-          <div className=" grid grid-cols-2 gap-4 mt-10 md:hidden ">
-            {Array.from({ length: 6 }).map((_, index) => (
+
+          {/* Mobile View */}
+          <div className="grid grid-cols-2 gap-4 mt-10 md:hidden">
+            {data.map((product, index) => (
               <Card key={index}>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-3xl font-semibold">{index + 1}</span>
+                  <div className="p-1 flex flex-col relative rounded-md">
+                    <div className="relative w-full aspect-[33/50]">
+                      <Image src={product.image} alt="Product" fill />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold">{product.name}</h3>
+                      <p className="text-red-500">{product.discount}% off</p>
+                      <p className="my-2">
+                        <span className="font-bold">&#8377;</span>
+                        <span className="line-through ml-1 text-gray-500">
+                          {product.originalPrice}
+                        </span>
+                        <span className="text-green-500 ml-1 font-bold">
+                          {product.price}
+                        </span>
+                      </p>
+                      <p>Sizes: {product.sizes.join(", ")}</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <CarouselContent className=" mt-10 hidden md:flex">
+          <CarouselContent className="mt-10 hidden md:flex">
             {data.map((product, index) => (
               <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                <div className="p-1 flex flex-col  relative border rounded-md">
-                  <div className="relative  w-full aspect-[33/50]">
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
                     <Image src={product.image} alt="Product" fill />
                   </div>
-                  <div className=" p-4">
-                    <h3 className="text-lg font-semibold"> {product.name}</h3>
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
                     <p className="text-red-500">{product.discount}% off</p>
                     <p className="my-2">
                       <span className="font-bold">&#8377;</span>
@@ -251,10 +219,6 @@ export default function Home() {
                       </span>
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
-                    {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
-                    <MdOutlineTimer className="text-xl lg:text-2xl" />
-                    <CountdownTimer initialTime={600} />
-                  </p> */}
                   </div>
                 </div>
               </CarouselItem>
@@ -262,7 +226,79 @@ export default function Home() {
           </CarouselContent>
         </Carousel>
       </section>
-      <section className=" mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin1.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Tops</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+
+          {/* MObile View */}
+          <div className="grid grid-cols-2 gap-4 mt-10 md:hidden">
+            {data.map((product, index) => (
+              <Card key={index}>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <div className="p-1 flex flex-col relative rounded-md">
+                    <div className="relative w-full aspect-[33/50]">
+                      <Image src={product.image} alt="Product" fill />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold">{product.name}</h3>
+                      <p className="text-red-500">{product.discount}% off</p>
+                      <p className="my-2">
+                        <span className="font-bold">&#8377;</span>
+                        <span className="line-through ml-1 text-gray-500">
+                          {product.originalPrice}
+                        </span>
+                        <span className="text-green-500 ml-1 font-bold">
+                          {product.price}
+                        </span>
+                      </p>
+                      <p>Sizes: {product.sizes.join(", ")}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <CarouselContent className="mt-10 hidden md:flex">
+            {data.map((product, index) => (
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    <p>Sizes: {product.sizes.join(", ")}</p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
           plugins={[plugin.current as any]}
           opts={{
@@ -270,31 +306,51 @@ export default function Home() {
           }}
           className="w-full max-w-screen-2xl"
         >
-          <div className=" w-full flex md:justify-between items-center max-w-screen-2xl px-3">
-            <h3 className=" text-6xl font-medium">Dresses</h3>
-            <div className="relative md:flex  hidden  gap-4  ">
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Dresses</h3>
+            <div className="relative md:flex hidden gap-4">
               <CarouselPrevious />
               <CarouselNext />
             </div>
           </div>
-          <div className=" grid grid-cols-2 gap-4 mt-10 md:hidden ">
-            {Array.from({ length: 6 }).map((_, index) => (
+
+          {/* MObile View */}
+          <div className="grid grid-cols-2 gap-4 mt-10 md:hidden">
+            {data.map((product, index) => (
               <Card key={index}>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-3xl font-semibold">{index + 1}</span>
+                  <div className="p-1 flex flex-col relative rounded-md">
+                    <div className="relative w-full aspect-[33/50]">
+                      <Image src={product.image} alt="Product" fill />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold">{product.name}</h3>
+                      <p className="text-red-500">{product.discount}% off</p>
+                      <p className="my-2">
+                        <span className="font-bold">&#8377;</span>
+                        <span className="line-through ml-1 text-gray-500">
+                          {product.originalPrice}
+                        </span>
+                        <span className="text-green-500 ml-1 font-bold">
+                          {product.price}
+                        </span>
+                      </p>
+                      <p>Sizes: {product.sizes.join(", ")}</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <CarouselContent className=" mt-10 hidden md:flex">
+          <CarouselContent className="mt-10 hidden md:flex">
             {data.map((product, index) => (
               <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                <div className="p-1 flex flex-col  relative border rounded-md">
-                  <div className="relative  w-full aspect-[33/50]">
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
                     <Image src={product.image} alt="Product" fill />
                   </div>
-                  <div className=" p-4">
-                    <h3 className="text-lg font-semibold"> {product.name}</h3>
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
                     <p className="text-red-500">{product.discount}% off</p>
                     <p className="my-2">
                       <span className="font-bold">&#8377;</span>
@@ -306,10 +362,6 @@ export default function Home() {
                       </span>
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
-                    {/* <p className="flex justify-center lg:justify-start items-center font-semibold">
-                    <MdOutlineTimer className="text-xl lg:text-2xl" />
-                    <CountdownTimer initialTime={600} />
-                  </p> */}
                   </div>
                 </div>
               </CarouselItem>
@@ -317,6 +369,8 @@ export default function Home() {
           </CarouselContent>
         </Carousel>
       </section>
+      {/* Category Section */}
+
       <section className="m-9">
         <div>
           <h2 className="text-2xl font-bold mb-4 text-center">
@@ -326,7 +380,7 @@ export default function Home() {
             </span>
           </h2>
           <div className="grid grid-cols-3 gap-4">
-            <div className="border">
+            <div>
               <Image src={link} alt="Breezy Linen" className="w-full" />
               <p className="text-center">BREEZY LINEN</p>
             </div>
