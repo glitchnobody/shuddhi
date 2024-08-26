@@ -2,6 +2,7 @@
 import Image from "next/image";
 import react, { useState, useEffect, useRef } from "react";
 import HeroImage1 from "../images/Homepage/Hero/hero.png";
+import HeroImage2 from "../images/Homepage/Hero/hero2.png";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
@@ -97,6 +98,9 @@ const data = [
     image: product4,
   },
 ];
+
+const heroCarouselImages = [HeroImage1, HeroImage2];
+
 type PropType = {
   plugins?: EmblaPluginType[];
 };
@@ -105,29 +109,42 @@ export default function Home() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const plugin1 = useRef(Autoplay({ delay: 1900, stopOnInteraction: true }));
   const plugin2 = useRef(Autoplay({ delay: 2100, stopOnInteraction: true }));
+  const plugin3 = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+
   return (
     <main className=" font-serif">
-      <section
-        className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(100vh-20vh)]"
-      >
+      <section className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(100vh-20vh)]">
         <div className="absolute inset-0 z-0">
-          <Image
-            src={HeroImage1}
-            alt="Hero Image"
-            className="w-full h-full object-cover object-center"
-            layout="fill"
-            priority
-          />
+          <Carousel
+            plugins={[plugin3.current as any]}
+            opts={{
+              align: "start",
+            }}
+            className="w-full h-full"
+          >
+            {heroCarouselImages.map((image, index) => (
+              <CarouselItem key={index} className="w-full h-full">
+                <Image
+                  src={image}
+                  alt={`Hero Image ${index + 1}`}
+                  className="w-full h-full object-cover object-center"
+                  layout="fill"
+                  priority
+                />
+              </CarouselItem>
+            ))}
+          </Carousel>
         </div>
         <div className="relative z-10 w-full h-full p-3 md:p-20 flex flex-col gap-4 justify-end text-white font-medium">
           <h1 className="text-5xl md:text-8xl italic">
             Pure Art <br /> Pure Living
           </h1>
           <p className="text-md font-sans max-w-xl text-stone-300">
-            Discover the art of pure living with Shuddhi Kalaa – where every product is a testament to India’s valuable heritage and promising future
+            Discover the art of pure living with Shuddhi Kalaa – where every product is a testament to India’s valuable heritage and promising future
           </p>
         </div>
       </section>
+
 
       <section className=" py-12">
         <div className="  max-w-full w-screen h-[70px] relative overflow-x-hidden">
