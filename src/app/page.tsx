@@ -108,28 +108,27 @@ export default function Home() {
   return (
     <main className=" font-serif">
       <section
-        className=" relative flex items-center justify-center p-5 pt-24 bg-[#606e5c]
-       w-full h-[calc(100vh-20vh)]"
+        className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(100vh-20vh)]"
       >
-        <div className=" relative w-full h-full">
-          <div className=" absolute z-10 w-full h-full p-3 md:p-20 flex flex-col gap-4 justify-end text-white font-medium">
-            <h1 className=" text-5xl md:text-8xl italic ">
-              Pure Art <br /> Pure Living
-            </h1>
-            <p className=" text-md font-sans max-w-xl text-stone-300">
-              Discover the art of pure living with Shuddhi Kalaa – where every
-              product is a testament to India’s valuable heritage and promising
-              future
-            </p>
-          </div>
+        <div className="absolute inset-0 z-0">
           <Image
             src={HeroImage1}
-            className=" rounded-xl object-cover object-center "
             alt="Hero Image"
-            fill
+            className="w-full h-full object-cover object-center"
+            layout="fill"
+            priority
           />
         </div>
+        <div className="relative z-10 w-full h-full p-3 md:p-20 flex flex-col gap-4 justify-end text-white font-medium">
+          <h1 className="text-5xl md:text-8xl italic">
+            Pure Art <br /> Pure Living
+          </h1>
+          <p className="text-md font-sans max-w-xl text-stone-300">
+            Discover the art of pure living with Shuddhi Kalaa – where every product is a testament to India’s valuable heritage and promising future
+          </p>
+        </div>
       </section>
+
       <section className=" py-12">
         <div className="  max-w-full w-screen h-[70px] relative overflow-x-hidden">
           <motion.div
