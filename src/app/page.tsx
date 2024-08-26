@@ -192,7 +192,7 @@ export default function Home() {
                           {product.price}
                         </span>
                       </p>
-                      <p>Sizes: {product.sizes.join(", ")}</p>
+                      <p className="text-base">Sizes: {product.sizes.join(", ")}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -371,38 +371,35 @@ export default function Home() {
       </section>
       {/* Category Section */}
 
-      <section className="m-9">
+      <section className="max-w-7xl mx-auto p-4 sm:p-8 lg:p-4">
         <div>
-          <h2 className="text-2xl font-bold mb-4 text-center">
-            TRENDING NOW{" "}
-            <span role="img" aria-label="fire">
-              🔥
-            </span>
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            TRENDING NOW <span role="img" aria-label="fire">🔥</span>
           </h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div>
               <Image src={link} alt="Breezy Linen" className="w-full" />
-              <p className="text-center">BREEZY LINEN</p>
+              <p className="text-center mt-2">BREEZY LINEN</p>
             </div>
             <div>
               <Image src={link1} alt="Tops" className="w-full" />
-              <p className="text-center">TOPS</p>
+              <p className="text-center mt-2">TOPS</p>
             </div>
             <div>
               <Image src={link2} alt="Crochet Shirts" className="w-full" />
-              <p className="text-center">CROCHET SHIRTS</p>
+              <p className="text-center mt-2">CROCHET SHIRTS</p>
             </div>
             <div>
               <Image src={link5} alt="All Black" className="w-full" />
-              <p className="text-center">ALL BLACK</p>
+              <p className="text-center mt-2">ALL BLACK</p>
             </div>
             <div>
               <Image src={link4} alt="Cargos" className="w-full" />
-              <p className="text-center">CARGOS</p>
+              <p className="text-center mt-2">CARGOS</p>
             </div>
             <div>
               <Image src={link3} alt="Full Sleeves" className="w-full" />
-              <p className="text-center">FULL SLEEVES</p>
+              <p className="text-center mt-2">FULL SLEEVES</p>
             </div>
           </div>
         </div>
