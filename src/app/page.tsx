@@ -323,7 +323,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold mb-6 text-center">
             TRENDING NOW <span role="img" aria-label="fire">🔥</span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div>
               <Image src={link} alt="Breezy Linen" className="w-full" />
               <p className="text-center mt-2">BREEZY LINEN</p>
@@ -351,6 +351,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
     </main>
   );
 }
