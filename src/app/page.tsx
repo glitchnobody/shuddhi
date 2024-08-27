@@ -109,10 +109,10 @@ export default function Home() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const plugin1 = useRef(Autoplay({ delay: 1900, stopOnInteraction: true }));
   const plugin2 = useRef(Autoplay({ delay: 2100, stopOnInteraction: true }));
-  const plugin3 = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+  const plugin3 = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
 
   return (
-    <main className=" font-serif">
+    <main className="font-serif">
       <section className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(100vh-20vh)]">
         <div className="absolute inset-0 z-0">
           <Carousel
@@ -122,17 +122,19 @@ export default function Home() {
             }}
             className="w-full h-full"
           >
-            {heroCarouselImages.map((image, index) => (
-              <CarouselItem key={index} className="w-full h-full">
-                <Image
-                  src={image}
-                  alt={`Hero Image ${index + 1}`}
-                  className="w-full h-full object-cover object-center"
-                  layout="fill"
-                  priority
-                />
-              </CarouselItem>
-            ))}
+            <CarouselContent>
+              {heroCarouselImages.map((image, index) => (
+                <CarouselItem key={index} className="w-full h-full">
+                  <Image
+                    src={image}
+                    alt={`Hero Image ${index + 1}`}
+                    className="w-full h-full object-cover object-center"
+                    layout="fill"
+                    priority
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
           </Carousel>
         </div>
         <div className="relative z-10 w-full h-full p-3 md:p-20 flex flex-col gap-4 justify-end text-white font-medium">
@@ -144,7 +146,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
 
       <section className=" py-12">
         <div className="  max-w-full w-screen h-[70px] relative overflow-x-hidden">
@@ -351,7 +352,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }

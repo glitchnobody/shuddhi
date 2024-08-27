@@ -23,6 +23,9 @@ const config = {
     },
     extend: {
       colors: {
+        customGreen: '#D6D5CD', // Background color for product page
+        customDarkGreen: '#2E2E28', // Footer or gradient dark color
+        customTextGreen: '#6B6F3C', // Text color
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
