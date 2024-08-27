@@ -15,6 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import CountdownTimer from "@/components/ui/countdown";
 // product image import
 import product1 from "../images/Product/product1.png";
 import product2 from "../images/Product/product2.png";
@@ -122,7 +123,7 @@ export default function Home() {
             }}
             className="w-full h-full"
           >
-             <CarouselContent>
+            <CarouselContent>
               {heroCarouselImages.map((image, index) => (
                 <CarouselItem key={index}>
                   <Image
@@ -133,7 +134,7 @@ export default function Home() {
                   />
                 </CarouselItem>
               ))}
-              </CarouselContent>
+            </CarouselContent>
           </Carousel>
         </div>
         <div className="relative z-10 w-full h-full p-3 md:p-20 flex flex-col gap-4 justify-end text-white font-medium">
@@ -213,6 +214,10 @@ export default function Home() {
                       </span>
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      {/* <MdOutlineTimer className="text-xl lg:text-2xl" /> */}
+                      <CountdownTimer initialTime={300} />
+                    </p>
                   </div>
                 </div>
               </CarouselItem>
@@ -260,6 +265,10 @@ export default function Home() {
                       </span>
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      {/* <MdOutlineTimer className="text-xl lg:text-2xl" /> */}
+                      <CountdownTimer initialTime={300} />
+                    </p>
                   </div>
                 </div>
               </CarouselItem>
@@ -308,6 +317,10 @@ export default function Home() {
                       </span>
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      {/* <MdOutlineTimer className="text-xl lg:text-2xl" /> */}
+                      <CountdownTimer initialTime={300} />
+                    </p>
                   </div>
                 </div>
               </CarouselItem>
