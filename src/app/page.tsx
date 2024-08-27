@@ -109,11 +109,11 @@ export default function Home() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const plugin1 = useRef(Autoplay({ delay: 1900, stopOnInteraction: true }));
   const plugin2 = useRef(Autoplay({ delay: 2100, stopOnInteraction: true }));
-  const plugin3 = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
+  const plugin3 = useRef(Autoplay({ delay: 2200, stopOnInteraction: false }));
 
   return (
     <main className="font-serif">
-      <section className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(100vh-20vh)]">
+      <section className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(100vh)]">
         <div className="absolute inset-0 z-0">
           <Carousel
             plugins={[plugin3.current as any]}
@@ -122,19 +122,18 @@ export default function Home() {
             }}
             className="w-full h-full"
           >
-            <CarouselContent>
+             <CarouselContent>
               {heroCarouselImages.map((image, index) => (
-                <CarouselItem key={index} className="w-full h-full">
+                <CarouselItem key={index}>
                   <Image
                     src={image}
-                    alt={`Hero Image ${index + 1}`}
-                    className="w-full h-full object-cover object-center"
-                    layout="fill"
-                    priority
+                    alt={`HeroImage${index + 1}`}
+                    className="w-full h-fill pb-3 object-fit object-center"
+                    layout="justify-content"
                   />
                 </CarouselItem>
               ))}
-            </CarouselContent>
+              </CarouselContent>
           </Carousel>
         </div>
         <div className="relative z-10 w-full h-full p-3 md:p-20 flex flex-col gap-4 justify-end text-white font-medium">
