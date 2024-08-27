@@ -16,6 +16,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import CountdownTimer from "@/components/ui/countdown";
+import { MdOutlineTimer } from "react-icons/md";
 // product image import
 import product1 from "../images/Product/product1.png";
 import product2 from "../images/Product/product2.png";
@@ -215,7 +216,7 @@ export default function Home() {
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
                     <p className="flex justify-center lg:justify-start items-center font-semibold">
-                      {/* <MdOutlineTimer className="text-xl lg:text-2xl" /> */}
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
                       <CountdownTimer initialTime={300} />
                     </p>
                   </div>
@@ -266,7 +267,7 @@ export default function Home() {
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
                     <p className="flex justify-center lg:justify-start items-center font-semibold">
-                      {/* <MdOutlineTimer className="text-xl lg:text-2xl" /> */}
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
                       <CountdownTimer initialTime={300} />
                     </p>
                   </div>
@@ -318,7 +319,7 @@ export default function Home() {
                     </p>
                     <p>Sizes: {product.sizes.join(", ")}</p>
                     <p className="flex justify-center lg:justify-start items-center font-semibold">
-                      {/* <MdOutlineTimer className="text-xl lg:text-2xl" /> */}
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
                       <CountdownTimer initialTime={300} />
                     </p>
                   </div>
