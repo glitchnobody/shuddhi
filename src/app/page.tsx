@@ -171,6 +171,8 @@ export default function Home() {
         </div>
         <div className=" w-full h-px max-w-screen-xl mt-10 bg-black m-auto"></div>
       </section>
+      {/* New Drop Section */}
+
       <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
           plugins={[plugin2.current as any]}
@@ -187,42 +189,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mobile View */}
-          <div className="grid grid-cols-2 gap-4 mt-10 md:hidden">
+          {/* Carousel for both Mobile and Desktop */}
+          <CarouselContent className="mt-10 flex">
             {data.map((product, index) => (
-              <Card key={index}>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <div className="p-1 flex flex-col relative rounded-md">
-                    <div className="relative w-full aspect-[33/50]">
-                      <Image src={product.image} alt="Product" fill />
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-lg font-semibold">{product.name}</h3>
-                      <p className="text-red-500">{product.discount}% off</p>
-                      <p className="my-2">
-                        <span className="font-bold">&#8377;</span>
-                        <span className="line-through ml-1 text-gray-500">
-                          {product.originalPrice}
-                        </span>
-                        <span className="text-green-500 ml-1 font-bold">
-                          {product.price}
-                        </span>
-                      </p>
-                      <p className="text-base">Sizes: {product.sizes.join(", ")}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <CarouselContent className="mt-10 hidden md:flex">
-            {data.map((product, index) => (
-              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
                 <div className="p-1 flex flex-col relative border rounded-md">
                   <div className="relative w-full aspect-[33/50]">
                     <Image src={product.image} alt="Product" fill />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <h3 className="text-lg font-semibold">{product.name}</h3>
                     <p className="text-red-500">{product.discount}% off</p>
                     <p className="my-2">
@@ -242,6 +220,7 @@ export default function Home() {
           </CarouselContent>
         </Carousel>
       </section>
+      {/* Tops Section */}
       <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
           plugins={[plugin1.current as any]}
@@ -257,43 +236,18 @@ export default function Home() {
               <CarouselNext />
             </div>
           </div>
-
-          {/* MObile View */}
-          <div className="grid grid-cols-2 gap-4 mt-10 md:hidden">
+          {/* Unified Carousel for Mobile and Desktop */}
+          <CarouselContent className="mt-10 flex">
             {data.map((product, index) => (
-              <Card key={index}>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <div className="p-1 flex flex-col relative rounded-md">
-                    <div className="relative w-full aspect-[33/50]">
-                      <Image src={product.image} alt="Product" fill />
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-lg font-semibold">{product.name}</h3>
-                      <p className="text-red-500">{product.discount}% off</p>
-                      <p className="my-2">
-                        <span className="font-bold">&#8377;</span>
-                        <span className="line-through ml-1 text-gray-500">
-                          {product.originalPrice}
-                        </span>
-                        <span className="text-green-500 ml-1 font-bold">
-                          {product.price}
-                        </span>
-                      </p>
-                      <p>Sizes: {product.sizes.join(", ")}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <CarouselContent className="mt-10 hidden md:flex">
-            {data.map((product, index) => (
-              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
                 <div className="p-1 flex flex-col relative border rounded-md">
                   <div className="relative w-full aspect-[33/50]">
                     <Image src={product.image} alt="Product" fill />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <h3 className="text-lg font-semibold">{product.name}</h3>
                     <p className="text-red-500">{product.discount}% off</p>
                     <p className="my-2">
@@ -313,7 +267,7 @@ export default function Home() {
           </CarouselContent>
         </Carousel>
       </section>
-
+      {/* Dresses Section */}
       <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
           plugins={[plugin.current as any]}
@@ -330,42 +284,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* MObile View */}
-          <div className="grid grid-cols-2 gap-4 mt-10 md:hidden">
+          {/* Unified Carousel for Mobile and Desktop */}
+          <CarouselContent className="mt-10 flex">
             {data.map((product, index) => (
-              <Card key={index}>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <div className="p-1 flex flex-col relative rounded-md">
-                    <div className="relative w-full aspect-[33/50]">
-                      <Image src={product.image} alt="Product" fill />
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-lg font-semibold">{product.name}</h3>
-                      <p className="text-red-500">{product.discount}% off</p>
-                      <p className="my-2">
-                        <span className="font-bold">&#8377;</span>
-                        <span className="line-through ml-1 text-gray-500">
-                          {product.originalPrice}
-                        </span>
-                        <span className="text-green-500 ml-1 font-bold">
-                          {product.price}
-                        </span>
-                      </p>
-                      <p>Sizes: {product.sizes.join(", ")}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <CarouselContent className="mt-10 hidden md:flex">
-            {data.map((product, index) => (
-              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
                 <div className="p-1 flex flex-col relative border rounded-md">
                   <div className="relative w-full aspect-[33/50]">
                     <Image src={product.image} alt="Product" fill />
                   </div>
-                  <div className="p-4">
+                  <div className="p-2">
                     <h3 className="text-lg font-semibold">{product.name}</h3>
                     <p className="text-red-500">{product.discount}% off</p>
                     <p className="my-2">
@@ -385,6 +315,7 @@ export default function Home() {
           </CarouselContent>
         </Carousel>
       </section>
+
       {/* Category Section */}
 
       <section className="max-w-7xl mx-auto p-4 sm:p-8 lg:p-4">
