@@ -115,22 +115,26 @@ export default function Home() {
 
   return (
     <main className="font-serif">
-      <section className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(100vh)]">
+      <section className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(80vh)]">
         <div className="absolute inset-0 z-0">
           <Carousel
             plugins={[plugin3.current as any]}
             opts={{
               align: "start",
             }}
-            className="w-full h-full"
+            className=" relative w-full h-[calc(100vh)]"
           >
             <CarouselContent>
               {heroCarouselImages.map((image, index) => (
-                <CarouselItem key={index}>
+                <CarouselItem
+                  className=" w-full h-[calc(80vh)] relative"
+                  key={index}
+                >
                   <Image
                     src={image}
                     alt={`HeroImage${index + 1}`}
-                    className="w-full h-fill pb-3 object-fit object-center"
+                    fill
+                    className="w-full h-fill pb-3 object-cover object-center"
                     layout="justify-content"
                   />
                 </CarouselItem>
@@ -143,7 +147,9 @@ export default function Home() {
             Pure Art <br /> Pure Living
           </h1>
           <p className="text-md font-sans max-w-xl text-stone-300">
-            Discover the art of pure living with Shuddhi Kalaa – where every product is a testament to India’s valuable heritage and promising future
+            Discover the art of pure living with Shuddhi Kalaa – where every
+            product is a testament to India’s valuable heritage and promising
+            future
           </p>
         </div>
       </section>
@@ -242,7 +248,6 @@ export default function Home() {
               <CarouselNext />
             </div>
           </div>
-          {/* Unified Carousel for Mobile and Desktop */}
           <CarouselContent className="mt-10 flex">
             {data.map((product, index) => (
               <CarouselItem
@@ -335,7 +340,10 @@ export default function Home() {
       <section className="max-w-7xl mx-auto p-4 sm:p-8 lg:p-4">
         <div>
           <h2 className="text-2xl font-bold mb-6 text-center">
-            TRENDING NOW <span role="img" aria-label="fire">🔥</span>
+            TRENDING NOW{" "}
+            <span role="img" aria-label="fire">
+              🔥
+            </span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div>

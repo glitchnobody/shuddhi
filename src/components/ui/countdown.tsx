@@ -29,9 +29,9 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ initialTime }) => {
   };
 
   return (
-    <div>
-      <h1>{formatTime(timeLeft)}</h1>
-    </div>
+    <span>
+      <span>{formatTime(timeLeft)}</span>
+    </span>
   );
 };
 
