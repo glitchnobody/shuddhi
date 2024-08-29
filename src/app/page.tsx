@@ -16,6 +16,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import CountdownTimer from "@/components/ui/countdown";
+import CategoryFilter from "@/components/ui/categoryfilter";
 import { MdOutlineTimer } from "react-icons/md";
 // product image import
 import product1 from "../images/Product/product1.png";

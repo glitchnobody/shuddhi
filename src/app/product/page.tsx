@@ -43,22 +43,22 @@ export default function ProductPage() {
                 </div>
             </main> */}
             <main className='flex w-full pt-24 px-[83px] gap-[13px]'>
-                <div className="flex left border border-red-800 w-[65%] gap-7 ">
-                    <div className="one border w-1/4 border-orange-600 flex flex-col gap-6">
-                        <div className='h-[230px] border border-black'>
+                <div className="flex left  w-[65%] gap-7 ">
+                    <div className="one w-1/4  flex flex-col gap-6">
+                        <div className='h-[230px]'>
                             <Image src={product} alt="Product" width={80} height={112} className='h-full w-full' />
                         </div>
-                        <div className='h-[230px] border border-black'>
+                        <div className='h-[230px]'>
                             <Image src={product} alt="Product" width={80} height={112} className='h-full w-full' />
                         </div>
-                        <div className='h-[230px] border border-black'>
+                        <div className='h-[230px]'>
                             <Image src={product} alt="Product" width={80} height={112} className='h-full w-full' />
                         </div>
                     </div>
-                    <div className="two border w-3/4 h-[737px] border-yellow-600">
+                    <div className="two  w-3/4 h-[737px] ">
                         <Image src={product} alt="Main Product" width={600} height={800} className='h-full w-full' /></div>
                 </div>
-                <div className="right border border-blue-800 w-[35%] ">
+                <div className="right  w-[35%] ">
                     <h2 className='text-4xl mt-[100px] mb-[150px] font-semibold'>Women&apos;s Dress</h2>
                     <div className='flex mb-[86px] gap-2'>
                         <p className="line-through">INR 1999</p>
@@ -76,10 +76,10 @@ export default function ProductPage() {
                     </div>
                     <div className='mt-[35px] text-white space-y-2 text-sm'>
                         <p>💎 LOCK PRICE: Pay 50% and lock for this price</p>
-                        <p>🔥 Get this for INR 599</p>
+                        <p>🔥 Get this for INR 1599</p>
                         <p>🔥 Buy 5 & Get Flat 20% Off!</p>
                     </div>
-                    <div className=" mt-[130px] flex space-x-4">
+                    <div className=" mt-[100px] flex space-x-4">
                         <button className="px-8 py-4 bg-customTextGreen text-white">Add to Cart</button>
                         <button className="px-8 py-4 text-white border border-customTextGreen">Buy Now</button>
                     </div>
