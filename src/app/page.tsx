@@ -23,6 +23,10 @@ import product1 from "../images/Product/product1.png";
 import product2 from "../images/Product/product2.png";
 import product3 from "../images/Product/product3.png";
 import product4 from "../images/Product/product4.png";
+import product5 from "../images/Product/product5.jpg";
+import product6 from "../images/Product/product6.jpg";
+import product7 from "../images/Product/product7.jpg";
+import product8 from "../images/Product/product8.jpg";
 // Category image import
 import link from "../images/Product/1.png";
 import link1 from "../images/Product/2.png";
@@ -48,12 +52,12 @@ const marqueeVariants = {
 const data = [
   {
     key: 0,
-    name: "Women's Dress",
+    name: "Carpet",
     price: 1599,
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
-    image: product1,
+    image: product8,
   },
   {
     key: 1,
@@ -66,12 +70,12 @@ const data = [
   },
   {
     key: 2,
-    name: "Women's Dress",
+    name: "Carpet",
     price: 1599,
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
-    image: product4,
+    image: product7,
   },
   {
     key: 3,
@@ -84,12 +88,12 @@ const data = [
   },
   {
     key: 4,
-    name: "Women's Dress",
+    name: "Carpet",
     price: 1599,
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
-    image: product3,
+    image: product6,
   },
   {
     key: 5,
@@ -100,6 +104,14 @@ const data = [
     sizes: ["S", "M", "L"],
     image: product4,
   },
+  {
+    key: 6,
+    name: "Handbag",
+    price: 999,
+    originalPrice: 1399,
+    discount: 30,
+    image: product5,
+  }
 ];
 
 const heroCarouselImages = [HeroImage1, HeroImage2];
@@ -221,7 +233,7 @@ export default function Home() {
                         {product.price}
                       </span>
                     </p>
-                    <p>Sizes: {product.sizes.join(", ")}</p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
                     <p className="flex justify-center lg:justify-start items-center font-semibold">
                       <MdOutlineTimer className="text-xl lg:text-2xl" />
                       <CountdownTimer initialTime={300} />
@@ -271,7 +283,7 @@ export default function Home() {
                         {product.price}
                       </span>
                     </p>
-                    <p>Sizes: {product.sizes.join(", ")}</p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
                     <p className="flex justify-center lg:justify-start items-center font-semibold">
                       <MdOutlineTimer className="text-xl lg:text-2xl" />
                       <CountdownTimer initialTime={300} />
@@ -323,7 +335,7 @@ export default function Home() {
                         {product.price}
                       </span>
                     </p>
-                    <p>Sizes: {product.sizes.join(", ")}</p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
                     <p className="flex justify-center lg:justify-start items-center font-semibold">
                       <MdOutlineTimer className="text-xl lg:text-2xl" />
                       <CountdownTimer initialTime={300} />
