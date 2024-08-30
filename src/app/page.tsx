@@ -707,7 +707,7 @@ export default function Home() {
           className="w-full max-w-screen-2xl"
         >
           <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
-            <h3 className="text-6xl font-medium">Home Decor</h3>
+            <h3 className="text-6xl font-medium">Home & Furniture</h3>
             <div className="relative md:flex hidden gap-4">
               <CarouselPrevious />
               <CarouselNext />
