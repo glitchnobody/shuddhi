@@ -49,6 +49,7 @@ import toys2 from "../images/Product/toys2.jpg";
 import toys3 from "../images/Product/toys3.jpg";
 import toys4 from "../images/Product/toys4.jpg";
 import toys5 from "../images/Product/toys5.jpg";
+import toys6 from "../images/Product/toys6.jpg";
 //Appliances image
 import elect from "../images/Product/eLect.jpg";
 import elect2 from "../images/Product/elect2.jpg";
@@ -61,6 +62,20 @@ import gift2 from "../images/Product/gift2.jpg";
 import gift3 from "../images/Product/gift3.jpg";
 import gift4 from "../images/Product/gift4.jpg";
 import gift5 from "../images/Product/gift5.jpg";
+//Cosmetic images
+import cosmetic from "../images/Product/cosmetic.jpg";
+import cosmetic2 from "../images/Product/cosmetic2.jpg";
+import cosmetic3 from "../images/Product/cosmetic3.jpg";
+import cosmetic4 from "../images/Product/cosmetic4.jpg";
+import cosmetic5 from "../images/Product/cosmetic5.jpg";
+import cosmetic6 from "../images/Product/cosmetic6.jpg";
+//Home & Furniture image
+import home from "../images/Product/home.jpg";
+import home2 from "../images/Product/home2.jpg";
+import home3 from "../images/Product/home3.jpg";
+import home4 from "../images/Product/home4.jpg";
+import home5 from "../images/Product/home5.jpg";
+import home6 from "../images/Product/home6.jpg";
 const marqueeVariants = {
   animate: {
     x: [0, -1421.235],
@@ -74,7 +89,7 @@ const marqueeVariants = {
     },
   },
 };
-
+// dress data
 const data = [
   {
     key: 0,
@@ -139,7 +154,7 @@ const data = [
     image: link2,
   },
 ];
-
+//footwear data
 const data2 = [
   {
     key: 0,
@@ -190,7 +205,7 @@ const data2 = [
     image: footwear2,
   },
 ];
-
+//home decor data
 const data3 = [
   {
     key: 0,
@@ -241,7 +256,7 @@ const data3 = [
     image: decor6,
   },
 ];
-
+//Cosmetics data
 const data4 = [
   {
     key: 0,
@@ -249,7 +264,7 @@ const data4 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: product2,
+    image: cosmetic,
   },
   {
     key: 1,
@@ -257,7 +272,7 @@ const data4 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: product2,
+    image: cosmetic2,
   },
   {
     key: 2,
@@ -265,7 +280,7 @@ const data4 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: product2,
+    image: cosmetic3,
   },
   {
     key: 3,
@@ -273,7 +288,7 @@ const data4 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: product2,
+    image: cosmetic4,
   },
   {
     key: 4,
@@ -281,7 +296,7 @@ const data4 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: product2,
+    image: cosmetic5,
   },
   {
     key: 5,
@@ -289,10 +304,10 @@ const data4 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: product2,
+    image: cosmetic6,
   },
 ];
-
+//Toys Data
 const data5 = [
   {
     key: 0,
@@ -340,10 +355,10 @@ const data5 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: toys,
+    image: toys6,
   },
 ];
-
+//Electronics Data
 const data6 = [
   {
     key: 0,
@@ -394,6 +409,7 @@ const data6 = [
     image: elect3,
   },
 ];
+//Gifts data
 const data7 = [
   {
     key: 0,
@@ -444,6 +460,58 @@ const data7 = [
     image: gift3,
   },
 ];
+//home furniture data
+const data8 = [
+  {
+    key: 0,
+    name: "Home & Furniture",
+    price: 599,
+    originalPrice: 799,
+    discount: 30,
+    image: home,
+  },
+  {
+    key: 1,
+    name: "Home & Furniture",
+    price: 599,
+    originalPrice: 799,
+    discount: 30,
+    image: home2,
+  },
+  {
+    key: 2,
+    name: "Home & Furniture",
+    price: 599,
+    originalPrice: 799,
+    discount: 30,
+    image: home3,
+  },
+  {
+    key: 3,
+    name: "Home & Furniture",
+    price: 599,
+    originalPrice: 799,
+    discount: 30,
+    image: home4,
+  },
+  {
+    key: 4,
+    name: "Home & Furniture",
+    price: 599,
+    originalPrice: 799,
+    discount: 30,
+    image: home5,
+  },
+  {
+    key: 5,
+    name: "Home & Furniture",
+    price: 599,
+    originalPrice: 799,
+    discount: 30,
+    image: home6,
+  },
+];
+
 const heroCarouselImages = [HeroImage1, HeroImage2];
 
 type PropType = {
@@ -458,6 +526,8 @@ export default function Home() {
   const plugin4 = useRef(Autoplay({ delay: 2300, stopOnInteraction: false }));
   const plugin5 = useRef(Autoplay({ delay: 2400, stopOnInteraction: false }));
   const plugin6 = useRef(Autoplay({ delay: 2500, stopOnInteraction: false }));
+  const plugin7 = useRef(Autoplay({ delay: 2500, stopOnInteraction: false }));
+  const plugin8 = useRef(Autoplay({ delay: 2500, stopOnInteraction: false }));
 
   return (
     <main className="font-serif">
@@ -535,7 +605,7 @@ export default function Home() {
           className="w-full max-w-screen-2xl"
         >
           <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
-            <h3 className="text-6xl font-medium">Dresses</h3>
+            <h3 className="text-6xl font-medium">Clothings</h3>
             <div className="relative md:flex hidden gap-4">
               <CarouselPrevious />
               <CarouselNext />
@@ -627,6 +697,56 @@ export default function Home() {
           </CarouselContent>
         </Carousel>
       </section>
+      {/* Home & Furniture section */}
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin8.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Home Decor</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+          <CarouselContent className="mt-10 flex">
+            {data8.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={300} />
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
       {/* Footwear Section */}
       <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
@@ -647,6 +767,58 @@ export default function Home() {
           {/* Unified Carousel for Mobile and Desktop */}
           <CarouselContent className="mt-10 flex">
             {data2.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={300} />
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+      {/*Cosmetic Sections*/}
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin7.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Selfcare & Cosmetics</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+
+          {/* Unified Carousel for Mobile and Desktop */}
+          <CarouselContent className="mt-10 flex">
+            {data4.map((product, index) => (
               <CarouselItem
                 key={index}
                 className="basis-1/2 md:basis-1/3 lg:basis-1/4"
@@ -741,7 +913,7 @@ export default function Home() {
           className="w-full max-w-screen-2xl"
         >
           <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
-            <h3 className="text-6xl font-medium">Appliances</h3>
+            <h3 className="text-6xl font-medium">Electronic Gadgets</h3>
             <div className="relative md:flex hidden gap-4">
               <CarouselPrevious />
               <CarouselNext />
