@@ -44,7 +44,7 @@ export default function GlobalNav() {
     <>
       <Sheet>
         <motion.nav
-          animate={outputY > 140 ? "new" : "initial"}
+          animate={outputY > 110 ? "new" : "initial"}
           variants={navBackgroundVariant}
           className=" fixed w-full p-2 z-[999] bg-[#606e5c]  top-0 left-0 flex justify-center"
         >

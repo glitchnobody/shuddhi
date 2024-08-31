@@ -531,19 +531,19 @@ export default function Home() {
 
   return (
     <main className="font-serif">
-      <section className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(80vh)]">
+      <section className="relative flex items-center justify-center p-5 pt-24 w-full h-[calc(60vh)]">
         <div className="absolute inset-0 z-0">
           <Carousel
             plugins={[plugin3.current as any]}
             opts={{
               align: "start",
             }}
-            className=" relative w-full h-[calc(100vh)]"
+            className=" relative w-full h-[calc(60vh)]"
           >
             <CarouselContent>
               {heroCarouselImages.map((image, index) => (
                 <CarouselItem
-                  className=" w-full h-[calc(80vh)] relative"
+                  className=" w-full h-[calc(60vh)] relative"
                   key={index}
                 >
                   <Image
@@ -570,7 +570,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className=" py-12">
+      {/* <section className=" py-12">
         <div className="  max-w-full w-screen h-[70px] relative overflow-x-hidden">
           <motion.div
             className=" absolute flex-nowrap mx-5 uppercase"
@@ -594,7 +594,7 @@ export default function Home() {
           </motion.div>
         </div>
         <div className=" w-full h-px max-w-screen-xl mt-10 bg-black m-auto"></div>
-      </section>
+      </section> */}
       {/* Dress Section */}
       <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
