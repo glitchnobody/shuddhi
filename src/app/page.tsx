@@ -78,6 +78,7 @@ import home3 from "../images/Product/home3.jpg";
 import home4 from "../images/Product/home4.jpg";
 import home5 from "../images/Product/home5.jpg";
 import home6 from "../images/Product/home6.jpg";
+import FeaturedGrid from "./FeaturedGrid";
 const marqueeVariants = {
   animate: {
     x: [0, -4311.655],
@@ -533,7 +534,7 @@ export default function Home() {
 
   return (
     <>
-      <section className=" w-full min-h-[80vh] relative  h-fit flex   bg-red-50">
+      <section className=" w-full min-h-[60vh] relative  h-fit flex   bg-red-50">
         <Image
           src="/hero.png"
           alt="hero image"
@@ -580,6 +581,9 @@ export default function Home() {
             </Button>
           </div>
         </div>
+      </section>
+      <section>
+        <FeaturedGrid />
       </section>
       <section className=" py-12">
         <div className=" w-full h-px max-w-screen-2xl mb-10 bg-black m-auto"></div>
@@ -632,6 +636,366 @@ export default function Home() {
         <div className=" w-full h-px max-w-screen-2xl mt-10 bg-black m-auto"></div>
       </section>
 
+      {/* Dress Section */}
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin2.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Clothings</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+
+          {/* Carousel for both Mobile and Desktop */}
+          <CarouselContent className="mt-10 flex">
+            {data.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={300} />
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+      {/* Home Decor Section */}
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin1.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Home Decor</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+          <CarouselContent className="mt-10 flex">
+            {data3.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={300} />
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+      {/* Home & Furniture section */}
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin8.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Home & Furniture</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+          <CarouselContent className="mt-10 flex">
+            {data8.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={300} />
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+      {/* Footwear Section */}
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Footwear</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+
+          {/* Unified Carousel for Mobile and Desktop */}
+          <CarouselContent className="mt-10 flex">
+            {data2.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={300} />
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+      {/*Cosmetic Sections*/}
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin7.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Selfcare & Cosmetics</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+
+          {/* Unified Carousel for Mobile and Desktop */}
+          <CarouselContent className="mt-10 flex">
+            {data4.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={300} />
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+      {/* Toys section */}
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin4.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Toys</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+
+          {/* Carousel for both Mobile and Desktop */}
+          <CarouselContent className="mt-10 flex">
+            {data5.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={300} />
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+      {/* Electronics Section */}
+      <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
+        <Carousel
+          plugins={[plugin5.current as any]}
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-screen-2xl"
+        >
+          <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
+            <h3 className="text-6xl font-medium">Electronic Gadgets</h3>
+            <div className="relative md:flex hidden gap-4">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </div>
+
+          {/* Carousel for both Mobile and Desktop */}
+          <CarouselContent className="mt-10 flex">
+            {data6.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <div className="p-1 flex flex-col relative border rounded-md">
+                  <div className="relative w-full aspect-[33/50]">
+                    <Image src={product.image} alt="Product" fill />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-lg font-semibold">{product.name}</h3>
+                    <p className="text-red-500">{product.discount}% off</p>
+                    <p className="my-2">
+                      <span className="font-bold">&#8377;</span>
+                      <span className="line-through ml-1 text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                      <span className="text-green-500 ml-1 font-bold">
+                        {product.price}
+                      </span>
+                    </p>
+                    {/* <p>Sizes: {product.sizes.join(", ")}</p> */}
+                    <p className="flex justify-center lg:justify-start items-center font-semibold">
+                      <MdOutlineTimer className="text-xl lg:text-2xl" />
+                      <CountdownTimer initialTime={300} />
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
       <section className="mt-10 w-full flex flex-col px-3 items-center mx-auto justify-center">
         <Carousel
           plugins={[plugin6.current as any]}
