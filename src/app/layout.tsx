@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className=" bg-stone-100">
         <GlobalNav />
-        {children}
+        <main className=" mt-24">{children}</main>
       </body>
     </html>
   );
