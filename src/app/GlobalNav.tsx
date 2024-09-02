@@ -1,10 +1,16 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { animate, motion } from "framer-motion";
+import {
+  animate,
+  AnimatePresence,
+  delay,
+  easeInOut,
+  motion,
+} from "framer-motion";
 import { useScroll } from "framer-motion";
 import {
   Sheet,
@@ -16,32 +22,62 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { set } from "date-fns";
+import Image from "next/image";
 
 export default function GlobalNav() {
-  // change the background color of the nav bar when scrolling above 80px with frame motion
-
   const { scrollY } = useScroll();
   const [outputY, setOutputY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  // change the background color of the nav bar when scrolling above 80px with frame motion
   useEffect(() => {
-    const setScrollValue = () => {
-      setOutputY(scrollY.get());
+    const LoadingAnimation = async () => {
+      if (!isLoaded) {
+        document.body.style.overflow = "hidden";
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        setIsLoaded(true);
+        document.body.style.overflow = "auto";
+      }
     };
-    window.addEventListener("scroll", setScrollValue);
-  }, [scrollY]);
 
-  const navBackgroundVariant = {
+    LoadingAnimation();
+  }, [isLoaded]);
+
+  const LoadingVarients = {
     initial: {
-      backgroundColor: "rgba(96,110,92,0)",
+      clipPath: "circle(150% at 100% 100%)",
     },
-    new: {
-      backgroundColor: "rgba(96,110,92,1)",
+    exit: {
+      clipPath: "circle(50% at 50% -50%) ",
+      transition: {
+        duration: 0.5,
+        delay: 1,
+      },
     },
   };
 
   return (
-    <>
+    <AnimatePresence>
+      {isLoaded == false && (
+        <motion.div
+          className=" fixed top-0 left-0 w-full h-full bg-black z-[9999]"
+          initial="initial"
+          animate="exit"
+          variants={LoadingVarients}
+        >
+          <div className=" flex relative h-full justify-center items-center">
+            <Image
+              alt="splash"
+              fill
+              className=" object-cover"
+              src="/splash.png"
+            />
+            <div className=" relative z-20 w-[300px] h-[300px]">
+              <GlobalLogo />
+            </div>
+          </div>
+        </motion.div>
+      )}
       <Sheet>
         <motion.nav className=" fixed w-full p-2 z-[999] bg-black h-24  top-0 left-0 flex justify-center">
           <div className="max-w-screen-2xl m-auto  w-full px-3 items-center  flex justify-between">
@@ -99,7 +135,7 @@ export default function GlobalNav() {
           </div>
         </motion.nav>
       </Sheet>
-    </>
+    </AnimatePresence>
   );
 }
 
