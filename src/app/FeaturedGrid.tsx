@@ -1,7 +1,10 @@
 "use client";
 import React from "react";
-import HeroImage1 from "../images/Homepage/Hero/hero.png";
 import HeroImage2 from "../images/Homepage/Hero/hero2.png";
+import HeroImage3 from "../images/Homepage/Hero/hero3.png";
+import HeroImage4 from "../images/Homepage/Hero/hero4.png";
+import HeroImage5 from "../images/Homepage/Hero/hero5.png";
+import HeroImage6 from "../images/Homepage/Hero/hero6.png";
 import Autoplay from "embla-carousel-autoplay";
 import { EmblaPluginType } from "embla-carousel";
 import { useRef } from "react";
@@ -14,7 +17,13 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 
-const heroCarouselImages = [HeroImage1, HeroImage2];
+const heroCarouselImages = [
+  HeroImage2,
+  HeroImage3,
+  HeroImage4,
+  HeroImage5,
+  HeroImage6,
+];
 
 export default function FeaturedGrid() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));

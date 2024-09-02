@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import react, { useState, useEffect, useRef } from "react";
-import HeroImage1 from "../images/Homepage/Hero/hero.png";
-import HeroImage2 from "../images/Homepage/Hero/hero2.png";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,18 +19,20 @@ import CountdownTimer from "@/components/ui/countdown";
 import CategoryFilter from "@/components/ui/categoryfilter";
 import { MdOutlineTimer } from "react-icons/md";
 // product image import
-import product1 from "../images/Product/product1.png";
-import product2 from "../images/Product/product2.png";
-import product3 from "../images/Product/product3.png";
-import product4 from "../images/Product/product4.png";
-import product5 from "../images/Product/product5.jpg";
+import product1 from "../images/Product/p1.png";
+import product2 from "../images/Product/p2.png";
+import product3 from "../images/Product/p3.png";
+import product4 from "../images/Product/p4.png";
+import product5 from "../images/Product/p5.png";
+import product6 from "../images/Product/p6.png";
+import product7 from "../images/Product/p7.png";
 // Category image import
-import link from "../images/Product/1.png";
-import link1 from "../images/Product/2.png";
-import link2 from "../images/Product/3.png";
-import link3 from "../images/Product/6.png";
-import link4 from "../images/Product/5.png";
-import link5 from "../images/Product/7.png";
+// import link from "../images/Product/1.png";
+// import link1 from "../images/Product/2.png";
+// import link2 from "../images/Product/3.png";
+// import link3 from "../images/Product/6.png";
+// import link4 from "../images/Product/5.png";
+// import link5 from "../images/Product/7.png";
 //Home Decor images
 import decor from "../images/Product/decor.jpg";
 import decor2 from "../images/Product/decor2.jpg";
@@ -41,10 +41,12 @@ import decor4 from "../images/Product/decor4.jpg";
 import decor5 from "../images/Product/decor5.jpg";
 import decor6 from "../images/Product/decor6.jpg";
 //Footwear images
-import footwear from "../images/Product/footwear.jpg";
-import footwear1 from "../images/Product/footwear2.jpg";
-import footwear2 from "../images/Product/footwear3.jpg";
-import footwear3 from "../images/Product/footwear4.jpg";
+import footwear from "../images/Product/f1.png";
+import footwear1 from "../images/Product/f2.png";
+import footwear2 from "../images/Product/f3.png";
+import footwear3 from "../images/Product/f4.png";
+import footwear4 from "../images/Product/f5.png";
+import footwear5 from "../images/Product/f6.png";
 //Toys images
 import toys from "../images/Product/toys.jpg";
 import toys2 from "../images/Product/toys2.jpg";
@@ -58,6 +60,7 @@ import elect2 from "../images/Product/elect2.jpg";
 import elect3 from "../images/Product/elect3.jpg";
 import elect4 from "../images/Product/elect4.jpg";
 import elect5 from "../images/Product/elect5.jpg";
+import elect6 from "../images/Product/elect6.jpg";
 //Gifts image
 import gift from "../images/Product/gift.jpg";
 import gift2 from "../images/Product/gift2.jpg";
@@ -96,7 +99,7 @@ const marqueeVariants = {
 const data = [
   {
     key: 0,
-    name: "Carpet",
+    name: "Dresses",
     price: 1599,
     originalPrice: 1999,
     discount: 40,
@@ -105,7 +108,7 @@ const data = [
   },
   {
     key: 1,
-    name: "Women's Dress",
+    name: "Dresses",
     price: 1599,
     originalPrice: 1999,
     discount: 40,
@@ -114,7 +117,7 @@ const data = [
   },
   {
     key: 2,
-    name: "Women's Dress",
+    name: "Dresses",
     price: 1599,
     originalPrice: 1999,
     discount: 40,
@@ -123,7 +126,7 @@ const data = [
   },
   {
     key: 3,
-    name: "Women's Dress",
+    name: "Dresses",
     price: 1599,
     originalPrice: 1999,
     discount: 40,
@@ -132,29 +135,29 @@ const data = [
   },
   {
     key: 4,
-    name: "Women's Dress",
+    name: "Dresses",
     price: 1599,
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
-    image: link1,
+    image: product5,
   },
   {
     key: 5,
-    name: "Women's Dress",
+    name: "Dresses",
     price: 1599,
     originalPrice: 1999,
     discount: 40,
     sizes: ["S", "M", "L"],
-    image: product4,
+    image: product6,
   },
   {
     key: 6,
-    name: "Women's Dress",
+    name: "Dresses",
     price: 999,
     originalPrice: 1399,
     discount: 30,
-    image: link2,
+    image: product7,
   },
 ];
 //footwear data
@@ -197,7 +200,7 @@ const data2 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: footwear,
+    image: footwear4,
   },
   {
     key: 5,
@@ -205,7 +208,7 @@ const data2 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: footwear2,
+    image: footwear5,
   },
 ];
 //home decor data
@@ -314,7 +317,7 @@ const data4 = [
 const data5 = [
   {
     key: 0,
-    name: "Wooden toys",
+    name: "Gaming & Lifestyle",
     price: 599,
     originalPrice: 799,
     discount: 30,
@@ -322,7 +325,7 @@ const data5 = [
   },
   {
     key: 1,
-    name: "Wooden toys",
+    name: "Gaming & Lifestyle",
     price: 599,
     originalPrice: 799,
     discount: 30,
@@ -330,7 +333,7 @@ const data5 = [
   },
   {
     key: 2,
-    name: "Wooden toys",
+    name: "Gaming & Lifestyle",
     price: 599,
     originalPrice: 799,
     discount: 30,
@@ -338,7 +341,7 @@ const data5 = [
   },
   {
     key: 3,
-    name: "Wooden toys",
+    name: "Gaming & Lifestyle",
     price: 599,
     originalPrice: 799,
     discount: 30,
@@ -346,7 +349,7 @@ const data5 = [
   },
   {
     key: 4,
-    name: "Wooden toys",
+    name: "Gaming & Lifestyle",
     price: 599,
     originalPrice: 799,
     discount: 30,
@@ -354,7 +357,7 @@ const data5 = [
   },
   {
     key: 5,
-    name: "Wooden toys",
+    name: "Gaming & Lifestyle",
     price: 599,
     originalPrice: 799,
     discount: 30,
@@ -409,7 +412,7 @@ const data6 = [
     price: 599,
     originalPrice: 799,
     discount: 30,
-    image: elect3,
+    image: elect6,
   },
 ];
 //Gifts data
@@ -515,8 +518,6 @@ const data8 = [
   },
 ];
 
-const heroCarouselImages = [HeroImage1, HeroImage2];
-
 type PropType = {
   plugins?: EmblaPluginType[];
 };
@@ -543,7 +544,7 @@ export default function Home() {
         ></Image>
         <div className=" w-full h-full flex flex-col justify-center items-center gap-10 absolute top-0 left-0 z-[10]  bg-gradient-to-t from-black to-black/0 ">
           <h1 className=" text-5xl md:text-7xl text-white font-serif italic">
-            Pure Art and Living
+            Pure Art Pure Living
           </h1>
           <Input
             type="search"
@@ -577,7 +578,7 @@ export default function Home() {
             </Button>
             <Button className="bg-white/70 gap-2 hover:bg-white text-black rounded-full">
               <Icon icon="material-symbols-light:toys-and-games-outline" />
-              Toys
+              Gaming & Lifestyle
             </Button>
           </div>
         </div>
@@ -902,7 +903,7 @@ export default function Home() {
           className="w-full max-w-screen-2xl"
         >
           <div className="w-full flex md:justify-between items-center max-w-screen-2xl px-3">
-            <h3 className="text-6xl font-medium">Toys</h3>
+            <h3 className="text-6xl font-medium">Gaming & Lifestyle</h3>
             <div className="relative md:flex hidden gap-4">
               <CarouselPrevious />
               <CarouselNext />

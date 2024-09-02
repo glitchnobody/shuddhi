@@ -100,7 +100,9 @@ export default function GlobalNav() {
                 <div className=" hover:text-white cursor-pointer">
                   Beauty and cosmetics
                 </div>
-                <div className=" hover:text-white cursor-pointer">Toys</div>
+                <div className=" hover:text-white cursor-pointer">
+                  Gaming & Lifestyle
+                </div>
               </div>
             </SheetContent>
             <SheetTrigger asChild>
